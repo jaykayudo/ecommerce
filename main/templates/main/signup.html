@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Sign Up with Booktime{% endblock %}
+{% block body %}
+<div class="container bg-light" style="padding: 30px;">
+    
+    <div>
+        <h1 class="h1 text-center">Create a New Account</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+            <label for="">
+                {{form.email.label_tag}}
+            </label>
+            <input type="email" name="email" class="form-control{% if form.email.errors %} is-invalid{% endif%}"
+                value="{{form.email.value|default:''}}"
+            >
+            {% if form.email.errors%}
+            <div class="text-danger">{{form.email.errors}}</div>
+            {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="">
+                    {{form.password1.label_tag}}
+                </label>
+                <input type="password" name="password1" class="form-control{% if form.password1.errors %} is-invalid{% endif%}"
+                    value="{{form.password1.value|default:''}}"
+                >
+                {% if form.password1.errors%}
+                <div class="text-danger">{{form.password1.errors}}</div>
+                {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="">
+                        {{form.password2.label_tag}}
+                    </label>
+                    <input type="password" name="password2" class="form-control{% if form.password2.errors %} is-invalid{% endif%}"
+                        value="{{form.password2.value|default:''}}"
+                    >
+                    {% if form.password2.errors%}
+                    <div class="text-danger">{{form.password2.errors}}</div>
+                    {% endif %}
+                    </div>
+            <input type="submit" value="Sign Up" class="btn btn-primary">
+        </form>
+    </div>
+
+</div>
+{% endblock %}

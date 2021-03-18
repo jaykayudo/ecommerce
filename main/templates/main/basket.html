@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Cart{% endblock title%}
+{% block body %}
+<div class="container">
+ <h2>Cart</h2>
+{% if formset %}
+    <p>You can adjust the quantities below.</p>
+<form method="POST">
+    {% csrf_token %}
+    {{ formset.management_form }}
+    {% for form in formset %}
+<p>
+    {{ form.instance.product.name }} 
+    {{ form }} 
+</p>
+{% endfor %}
+    <button type="submit" class="btn btn-primary">Update Cart </button>
+    </form>
+    {% if request.basket.is_empty %}
+    {% else %}
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'address-select' %}" class="btn btn-success">Place Order</a>
+    {% else %}
+    <a href="{% url 'login' %}" class="btn btn-primary">Login</a><a href="{% url 'sign-up' %}" class="btn btn-primary">Sign Up</a>
+    {% endif %}
+    {% endif %} 
+{% else %}
+    <p>You have no items in the basket.</p>
+{% endif %}
+
+</div>
+{% endblock %}
+{% block js %}
+{% if formset %}
+{{ formset.media }} 
+{% endif %}
+{% endblock js%}
+

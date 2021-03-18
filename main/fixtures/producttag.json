@@ -1,0 +1,56 @@
+[
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Fantasy",
+    "description": "",
+    "slug": "fantasy",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Romance",
+    "description": "Story of Love and Passion for Love",
+    "slug": "romance",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Science Fiction",
+    "description": "Discover the wonders of Science",
+    "slug": "science-fiction",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Teamwork",
+    "description": "Look into the great power of team work",
+    "slug": "teamwork",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Drama",
+    "description": "Acting and lines",
+    "slug": "drama",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Finance",
+    "description": "Look into Economy and Money value",
+    "slug": "finance",
+    "active": true
+  }
+}
+]

@@ -1,0 +1,27 @@
+{% extends 'admin/base_site.html'%}
+{% block title %}
+Order Per Day
+{% endblock %}
+{% block content %}
+<table>
+    <tr>
+        <th>
+            Days
+        </th>
+        <th>
+            Number of Orders
+        </th>
+    </tr>
+    
+        {% for x, y in labels %}
+        <td>
+            {{x}}
+        </td>
+        <td>
+            {{y}}
+        </td>
+        {% endfor %}
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+{% block body %}
+<div class="center-content2 bg-light">
+    
+    
+        <h1 class="h1 text-center">Login</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger">{{form.non_field_errors}}</div>
+            {% endif %}
+            <div class="form-group">
+                <label class="control-label">
+                    Email
+                </label>
+               <input type="email" name="email" id="email" class="form-control{%if form.email.errors%} has-errored{% endif %}"
+                value="{{form.email.value|default:''}}"
+               >
+            </div>
+            <div class="form-group">
+                <label class="control-label">
+                    Password
+                </label>
+               <input type="password" name="password" id="password" class="form-control{%if form.email.errors%} has-errored{% endif %}"
+                value="{{form.password.value|default:''}}"
+               >   
+            </div>
+            
+            <input type="submit" value="Login" class="btn btn-success">
+        </form>
+        <p>
+            Don't have an account ? <a href="{% url 'signup'%}">Sign Up</a>
+        </p>
+    
+
+</div>
+{% endblock %}
